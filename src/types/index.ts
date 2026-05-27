@@ -41,6 +41,17 @@ export interface NavItem {
 }
 
 // ==========================================
+// Service Types
+// ==========================================
+
+export interface ServiceItem {
+  title: string;
+  description: string;
+  image: string;
+  highlighted?: boolean;
+}
+
+// ==========================================
 // TODO: Add more types as needed!
 // ==========================================
 

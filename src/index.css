@@ -17,13 +17,17 @@
 @theme {
   --color-primary: #ff623e;
   --color-primary-light: #ff6c37;
+  --color-surface: var(--theme-surface);
+  --color-muted: var(--theme-muted);
+  --color-muted-dark: var(--theme-muted-dark);
   --font-sans: 'Quicksand', Helvetica, sans-serif;
   --font-logo: 'Outfit', Helvetica, sans-serif;
   --breakpoint-figma: 90rem;
 }
 
 /* Default theme (light). Tanpa toggle, app akan memakai nilai ini. */
-html {
+html.light {
+  --theme-surface: #fafafa;
   --theme-surface: #fafafa;
   --theme-page-bg: #ffffff;
   --theme-page-text: #0a0d12;
@@ -45,6 +49,7 @@ html {
 }
 
 html.dark {
+  --theme-surface: #0a0d12;
   --theme-page-bg: #000000;
   --theme-page-text: #fdfdfd;
   --theme-logo-text: #ffffff;
@@ -174,7 +179,7 @@ html.dark {
 /* Hero — Figma desktop layout */
 @utility hero-section__inner {
   @variant lg {
-    position: absolute;
+    position: relative;
     width: 100%;
     min-height: 747px;
     overflow: visible;
@@ -227,3 +232,92 @@ html.dark {
   background: #555;
 }
 */
+
+/* ------------------------------------------------------------
+   Services styles (ServiceCard / SectionHeader)
+   ------------------------------------------------------------ */
+
+/* Layout — Figma spacing (mobile → md → lg) */
+@utility section-padding {
+  padding-inline: 1rem;
+  padding-block: 2.5rem;
+
+  @variant md {
+    padding-inline: 2.5rem;
+  }
+
+  @variant lg {
+    padding-inline: 140px;
+    padding-block: 5rem;
+  }
+}
+
+@utility text-display-xl {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 700;
+  letter-spacing: -0.56px;
+}
+
+@utility text-display-sm {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 700;
+  letter-spacing: -0.56px;
+
+  @variant lg {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+@utility text-body-sm-medium {
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+/* Service card */
+.service-card {
+  border: 1px solid var(--theme-border);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service-card-border {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 1rem;
+  padding: 1px;
+  opacity: 0;
+  background: linear-gradient(286deg, var(--theme-border) 0%, #ff6c37 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: opacity 0.25s ease;
+}
+
+.service-card:focus-within {
+  border-color: transparent;
+  box-shadow: 0 0 32px rgba(255, 98, 62, 0.12);
+}
+
+.service-card:focus-within .service-card-border {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    border-color: transparent;
+    box-shadow: 0 0 32px rgba(255, 98, 62, 0.12);
+  }
+
+  .service-card:hover .service-card-border {
+    opacity: 1;
+  }
+}

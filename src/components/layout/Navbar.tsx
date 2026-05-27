@@ -21,7 +21,7 @@ export function Navbar() {
         className={cn(
           'flex flex-row justify-between items-center px-4 py-6 gap-[159px]',
           'md:h-[72px] md:gap-6 md:px-6',
-          'lg:px-[140px] py-0 gap-[94px]',
+          'lg:h-[84px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-x-6 lg:px-8',
           'xl:px-[140px] xl:gap-x-10',
           '2xl:gap-x-12'
         )}
