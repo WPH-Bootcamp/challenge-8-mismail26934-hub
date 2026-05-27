@@ -5,11 +5,105 @@
  * Docs: https://tailwindcss.com/docs/installation/using-vite
  */
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Tell Tailwind where to scan for classes */
 @source "./**/*.{js,jsx,ts,tsx}";
 @source "../index.html";
+
+/* ------------------------------------------------------------
+   Design tokens (subset) untuk Navbar
+   ------------------------------------------------------------ */
+@theme {
+  --color-primary: #ff623e;
+  --color-primary-light: #ff6c37;
+  --font-sans: 'Quicksand', Helvetica, sans-serif;
+  --font-logo: 'Outfit', Helvetica, sans-serif;
+}
+
+/* Default theme (light). Tanpa toggle, app akan memakai nilai ini. */
+html {
+  --theme-surface: #fafafa;
+  --theme-page-bg: #ffffff;
+  --theme-page-text: #0a0d12;
+
+  --theme-logo-text: #000000;
+
+  --theme-border: #dedcdc;
+  --theme-border-muted: #dfdfdf;
+  --theme-muted: #717680;
+  --theme-muted-dark: #aaaaaa;
+
+  --theme-star: #f3b64c;
+
+  --theme-nav-bg: rgb(255 255 255 / 0.8);
+  --theme-nav-border: #dfdfdf;
+  --theme-mobile-menu-bg: rgb(255 255 255 / 0.98);
+
+  --theme-hover: rgb(10 13 18 / 0.06);
+}
+
+html.dark {
+  --theme-page-bg: #000000;
+  --theme-page-text: #fdfdfd;
+  --theme-logo-text: #ffffff;
+
+  --theme-border: #181d27;
+  --theme-border-muted: #252b37;
+  --theme-muted: #a4a7ae;
+  --theme-muted-dark: #535861;
+
+  --theme-nav-bg: rgb(0 0 0 / 0.2);
+  --theme-nav-border: rgb(255 255 255 / 0.1);
+  --theme-mobile-menu-bg: rgb(0 0 0 / 0.95);
+
+  --theme-hover: rgb(255 255 255 / 0.1);
+}
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--theme-page-bg);
+    color: var(--theme-page-text);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+}
+
+/* Utilities yang dipakai langsung oleh class di Navbar.tsx */
+@utility container-page {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+@utility text-fg {
+  color: var(--theme-page-text);
+}
+
+@utility text-logo {
+  color: var(--theme-logo-text);
+}
+
+@utility bg-nav {
+  background-color: var(--theme-nav-bg);
+}
+
+@utility border-nav-border {
+  border-color: var(--theme-nav-border);
+}
+
+@utility bg-mobile-menu {
+  background-color: var(--theme-mobile-menu-bg);
+}
+
+@utility bg-hover {
+  background-color: var(--theme-hover);
+}
 
 /**
  * Custom Global Styles
