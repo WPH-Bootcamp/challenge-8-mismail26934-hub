@@ -1,69 +1,75 @@
-/**
- * Main CSS File
- *
- * Tailwind CSS v4 - Using new @import syntax
- * Docs: https://tailwindcss.com/docs/installation/using-vite
- */
-
 @import 'tailwindcss';
 
-/* Tell Tailwind where to scan for classes */
 @source "./**/*.{js,jsx,ts,tsx}";
 @source "../index.html";
 
-/* ------------------------------------------------------------
-   Design tokens (subset) untuk Navbar
-   ------------------------------------------------------------ */
 @theme {
   --color-primary: #ff623e;
   --color-primary-light: #ff6c37;
+  --color-accent-gold: var(--theme-star);
   --color-surface: var(--theme-surface);
+  --color-border: var(--theme-border);
+  --color-border-muted: var(--theme-border-muted);
   --color-muted: var(--theme-muted);
   --color-muted-dark: var(--theme-muted-dark);
+  --color-accent-card: #cc4e32;
+  --color-nav: var(--theme-nav-bg);
+  --color-nav-border: var(--theme-nav-border);
+  --color-mobile-menu: var(--theme-mobile-menu-bg);
+  --color-logo: var(--theme-logo-text);
+  --color-hover: var(--theme-hover);
+  --color-avatar-ring: var(--theme-avatar-ring);
   --font-sans: 'Quicksand', Helvetica, sans-serif;
   --font-logo: 'Outfit', Helvetica, sans-serif;
   --breakpoint-figma: 90rem;
 }
 
-/* Default theme (light). Tanpa toggle, app akan memakai nilai ini. */
-html.light {
-  --theme-surface: #fafafa;
-  --theme-surface: #fafafa;
-  --theme-page-bg: #ffffff;
-  --theme-page-text: #0a0d12;
-
-  --theme-logo-text: #000000;
-
-  --theme-border: #dedcdc;
-  --theme-border-muted: #dfdfdf;
-  --theme-muted: #717680;
-  --theme-muted-dark: #aaaaaa;
-
-  --theme-star: #f3b64c;
-
-  --theme-nav-bg: rgb(255 255 255 / 0.8);
-  --theme-nav-border: transparent;
-  --theme-mobile-menu-bg: rgb(255 255 255 / 0.98);
-
-  --theme-hover: rgb(10 13 18 / 0.06);
-}
-
 html.dark {
   --theme-surface: #0a0d12;
-  --theme-page-bg: #000000;
-  --theme-page-text: #fdfdfd;
-  --theme-logo-text: #ffffff;
-
   --theme-border: #181d27;
   --theme-border-muted: #252b37;
   --theme-muted: #a4a7ae;
   --theme-muted-dark: #535861;
-
+  --theme-page-bg: #000000;
+  --theme-page-text: #fdfdfd;
+  --theme-logo-text: #ffffff;
+  --theme-star: #f3b64c;
   --theme-nav-bg: rgb(0 0 0 / 0.2);
-  --theme-nav-border: transparent;
+  --theme-nav-border: rgb(255 255 255 / 0.1);
   --theme-mobile-menu-bg: rgb(0 0 0 / 0.95);
-
   --theme-hover: rgb(255 255 255 / 0.1);
+  --theme-fade-from: #000000;
+  --theme-card-solid: #0a0d12;
+  --theme-avatar-ring: #000000;
+  --theme-partner-filter: grayscale(1) brightness(2);
+  --theme-partner-opacity: 0.8;
+  --theme-social-bg: transparent;
+  --theme-social-border: transparent;
+  --theme-social-icon-filter: none;
+}
+
+html.light {
+  --theme-surface: #fafafa;
+  --theme-border: #dedcdc;
+  --theme-border-muted: #dfdfdf;
+  --theme-muted: #717680;
+  --theme-muted-dark: #aaaaaa;
+  --theme-page-bg: #ffffff;
+  --theme-page-text: #0a0d12;
+  --theme-logo-text: #000000;
+  --theme-star: #f3b64c;
+  --theme-nav-bg: rgb(255 255 255 / 0.8);
+  --theme-nav-border: #dfdfdf;
+  --theme-mobile-menu-bg: rgb(255 255 255 / 0.98);
+  --theme-hover: rgb(10 13 18 / 0.06);
+  --theme-fade-from: #ffffff;
+  --theme-card-solid: #fafafa;
+  --theme-avatar-ring: #ffffff;
+  --theme-partner-filter: grayscale(1);
+  --theme-partner-opacity: 1;
+  --theme-social-bg: #ffffff;
+  --theme-social-border: var(--theme-border-muted);
+  --theme-social-icon-filter: brightness(0);
 }
 
 @layer base {
@@ -97,13 +103,7 @@ html.dark {
   }
 }
 
-/* Utilities yang dipakai langsung oleh class di Navbar.tsx */
-@utility container-page {
-  width: 100%;
-  max-width: 1440px;
-  margin-inline: auto;
-}
-
+/* Semantic theme utilities */
 @utility text-fg {
   color: var(--theme-page-text);
 }
@@ -112,32 +112,64 @@ html.dark {
   background-color: var(--theme-page-bg);
 }
 
-@utility text-logo {
-  color: var(--theme-logo-text);
+@utility bg-card-solid {
+  background-color: var(--theme-card-solid);
 }
 
-@utility bg-nav {
-  background-color: var(--theme-nav-bg);
+@utility border-card {
+  border-color: var(--theme-border);
 }
 
-@utility border-nav-border {
-  border-color: var(--theme-nav-border);
+/* Layout — Figma spacing (mobile → md → lg) */
+@utility container-page {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
 }
 
-@utility bg-mobile-menu {
-  background-color: var(--theme-mobile-menu-bg);
+@utility section-padding {
+  padding-inline: 1rem;
+  padding-block: 2.5rem;
+
+  @variant md {
+    padding-inline: 2.5rem;
+  }
+
+  @variant lg {
+    padding-inline: 140px;
+    padding-block: 5rem;
+  }
 }
 
-@utility bg-hover {
-  background-color: var(--theme-hover);
+@utility section-padding-lg {
+  padding-block: 5rem;
+
+  @variant lg {
+    padding-block: 5rem;
+  }
 }
 
-@utility theme-toggle {
-  border: 1px solid var(--theme-border-muted);
-  background-color: transparent;
+/* Display typography — mobile base, lg desktop (Figma) */
+@utility text-display-2xl {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.64px;
+
+  @variant lg {
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -0.96px;
+  }
 }
 
-/* Display typography — Hero section (Figma) */
+@utility text-display-xl {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 700;
+  letter-spacing: -0.56px;
+}
+
 @utility text-display-lg {
   font-size: 36px;
   line-height: 44px;
@@ -152,10 +184,48 @@ html.dark {
 }
 
 @utility text-display-3xl {
-  font-size: 51px;
+  font-size: 56px;
   line-height: 68px;
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+@utility text-display-md {
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 700;
+  letter-spacing: -0.64px;
+
+  @variant lg {
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -0.64px;
+  }
+}
+
+@utility text-display-sm {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 700;
+  letter-spacing: -0.56px;
+
+  @variant lg {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+@utility text-display-xs {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 700;
+  letter-spacing: -0.32px;
+
+  @variant lg {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0;
+  }
 }
 
 @utility text-body-md-semibold {
@@ -164,9 +234,27 @@ html.dark {
   font-weight: 600;
 }
 
+@utility text-body-sm-medium {
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+@utility text-body-sm-semibold {
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
 @utility text-body-md-bold {
   font-size: 16px;
   line-height: 30px;
+  font-weight: 700;
+}
+
+@utility text-body-lg-bold {
+  font-size: 18px;
+  line-height: 32px;
   font-weight: 700;
 }
 
@@ -206,73 +294,191 @@ html.dark {
   }
 }
 
-/**
- * Custom Global Styles
- *
- * Add your custom global styles here if needed
- * Prefer using Tailwind utilities in components
- */
-
-/* Optional: Custom scrollbar styles */
-/* Uncomment if you want custom scrollbar
-::-webkit-scrollbar {
-  width: 10px;
+@utility hero-headline-accent {
+  background: linear-gradient(90deg, #ff6c37 0%, #ff623e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+@utility text-logo {
+  color: var(--theme-logo-text);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+@utility social-link {
+  border: 1px solid var(--theme-social-border);
+  background-color: var(--theme-social-bg);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+@utility social-icon {
+  filter: var(--theme-social-icon-filter);
 }
-*/
 
-/* ------------------------------------------------------------
-   Services styles (ServiceCard / SectionHeader)
-   ------------------------------------------------------------ */
+@utility marquee-fade-left {
+  background: linear-gradient(to right, var(--theme-fade-from), transparent);
+}
 
-/* Layout — Figma spacing (mobile → md → lg) */
-@utility section-padding {
-  padding-inline: 1rem;
-  padding-block: 2.5rem;
+@utility marquee-fade-right {
+  background: linear-gradient(to left, var(--theme-fade-from), transparent);
+}
 
-  @variant md {
-    padding-inline: 2.5rem;
+.partners-marquee-viewport .partners-logo {
+  mix-blend-mode: normal;
+  opacity: var(--theme-partner-opacity);
+  filter: var(--theme-partner-filter);
+}
+
+/* Service card */
+.service-card {
+  border: 1px solid var(--theme-border);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service-card-border {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 1rem;
+  padding: 1px;
+  opacity: 0;
+  background: linear-gradient(286deg, var(--theme-border) 0%, #ff6c37 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: opacity 0.25s ease;
+}
+
+.service-card:focus-within {
+  border-color: transparent;
+  box-shadow: 0 0 32px rgba(255, 98, 62, 0.12);
+}
+
+.service-card:focus-within .service-card-border {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    border-color: transparent;
+    box-shadow: 0 0 32px rgba(255, 98, 62, 0.12);
   }
 
-  @variant lg {
-    padding-inline: 140px;
-    padding-block: 5rem;
+  .service-card:hover .service-card-border {
+    opacity: 1;
   }
 }
 
-@utility text-display-xl {
-  font-size: 28px;
-  line-height: 38px;
-  font-weight: 700;
-  letter-spacing: -0.56px;
+@utility consultation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  width: 329px;
+  max-width: 329px;
+  min-height: 453.38px;
+  height: 453.38px;
+  background: #cc4e32;
+  flex: none;
+  flex-shrink: 0;
+  border-radius: 24px;
+  padding: 24px;
+  gap: 24px;
 }
 
-@utility text-display-sm {
-  font-size: 28px;
-  line-height: 38px;
-  font-weight: 700;
-  letter-spacing: -0.56px;
+@utility consultation-image {
+  width: 281px;
+  height: 153.38px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex: none;
+}
 
-  @variant lg {
-    font-size: 28px;
-    line-height: 38px;
+@utility consultation-button {
+  flex: none;
+  align-self: stretch;
+  min-height: 48px;
+  border-radius: 9999px;
+}
+
+.testimonial-card-highlight {
+  overflow: visible;
+}
+
+.testimonial-card-highlight::before {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(116deg, #ff6c37 0%, var(--theme-border) 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@keyframes partners-marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
-@utility text-body-sm-medium {
-  font-size: 14px;
-  line-height: 28px;
-  font-weight: 500;
+@keyframes testimonials-marquee-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.partners-marquee-viewport {
+  isolation: isolate;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.partners-marquee-track {
+  will-change: transform;
+  overflow: visible;
+  animation: partners-marquee-ltr 40s linear infinite;
+}
+
+.partners-marquee-viewport:hover .partners-marquee-track {
+  animation-play-state: paused;
+}
+
+.testimonials-marquee-viewport {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.testimonials-marquee-track {
+  will-change: transform;
+  overflow: visible;
+  animation: testimonials-marquee-ltr 40s linear infinite;
+}
+
+.testimonials-marquee-viewport:hover .testimonials-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-marquee-track,
+  .testimonials-marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
 }

@@ -57,6 +57,14 @@ export interface PortfolioItem {
   image: string;
 }
 
+export interface TestimonialItem {
+  quote: string;
+  name: string;
+  role: string;
+  avatar: string;
+  highlighted?: boolean;
+}
+
 // ==========================================
 // TODO: Add more types as needed!
 // ==========================================
