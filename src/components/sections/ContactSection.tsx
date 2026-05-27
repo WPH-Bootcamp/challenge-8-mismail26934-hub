@@ -4,13 +4,15 @@ import { Button } from '../ui/Button';
 import { Checkbox } from '../ui/Checkbox';
 import { Input } from '../ui/Input';
 import { SectionHeader } from '../ui/SectionHeader';
-import { Textarea } from '../ui/Textarea';
+import { Textarea } from '../ui/textarea';
+import { MessageReceivedPopup } from '../modals/MessagePopup';
+import messageReceivedImage from '../../assets/images/modals/message-received.png';
 
 export function ContactSection() {
   const [selectedServices, setSelectedServices] = useState<string[]>([
     'Web Development',
   ]);
-
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const toggleService = (service: string) => {
     setSelectedServices((prev) =>
       prev.includes(service)
@@ -21,6 +23,7 @@ export function ContactSection() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsPopupOpen(true);
   };
 
   return (
@@ -125,6 +128,15 @@ export function ContactSection() {
             Send
           </Button>
         </form>
+        <MessageReceivedPopup
+          isOpen={isPopupOpen}
+          onClose={() => setIsPopupOpen(false)}
+          onBackHome={() => {
+            setIsPopupOpen(false);
+            window.location.href = '/';
+          }}
+          imageSrc={messageReceivedImage}
+        />
       </div>
     </section>
   );
