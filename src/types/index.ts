@@ -65,6 +65,11 @@ export interface TestimonialItem {
   highlighted?: boolean;
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 // ==========================================
 // TODO: Add more types as needed!
 // ==========================================
