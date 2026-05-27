@@ -51,6 +51,12 @@ export interface ServiceItem {
   highlighted?: boolean;
 }
 
+export interface PortfolioItem {
+  category: string;
+  title: string;
+  image: string;
+}
+
 // ==========================================
 // TODO: Add more types as needed!
 // ==========================================

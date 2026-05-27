@@ -1,5 +1,6 @@
 import { Navbar } from '../components/layout/Navbar';
 import { HeroSection } from '../components/sections/HeroSection';
+import { PortfolioSection } from '../components/sections/PortfolioSection';
 import { ServicesSection } from '../components/sections/ServicesSection';
 
 export function Home() {
@@ -9,6 +10,7 @@ export function Home() {
       <main className='pt-16 md:pt-[72px] lg:pt-[84px]'>
         <HeroSection />
         <ServicesSection />
+        <PortfolioSection />
       </main>
     </div>
   );
