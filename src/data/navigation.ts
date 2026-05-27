@@ -7,3 +7,10 @@ export const navItems: NavItem[] = [
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'FAQ', href: '#faq' },
 ];
+export const footerLinks: NavItem[] = [
+  { label: 'About', href: '#about' },
+  { label: 'Service', href: '#services' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'FAQ', href: '#faq' },
+];

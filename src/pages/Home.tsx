@@ -9,6 +9,7 @@ import { ProcessSection } from '../components/sections/ProcessSection';
 import { ServicesSection } from '../components/sections/ServicesSection';
 import { StatisticSection } from '../components/sections/StatisticSection';
 import { TestimonialsSection } from '../components/sections/TestimonialsSection';
+import { Footer } from '../components/layout/Footer';
 
 export function Home() {
   return (
@@ -26,6 +27,7 @@ export function Home() {
         <FaqSection />
         <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 }
