@@ -70,7 +70,17 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface StatItem {
+  value: string;
+  label: string;
+}
+
+export interface ProcessStep {
+  number: string;
+  side: 'left' | 'right';
+  title: string;
+  description: string;
+}
 // ==========================================
 // TODO: Add more types as needed!
 // ==========================================
-
