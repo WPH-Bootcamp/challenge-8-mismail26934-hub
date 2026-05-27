@@ -1,4 +1,5 @@
 import { Navbar } from '../components/layout/Navbar';
+import { ContactSection } from '../components/sections/ContactSection';
 import { FaqSection } from '../components/sections/FaqSection';
 import { HeroSection } from '../components/sections/HeroSection';
 import { IndustrySection } from '../components/sections/IndustrySection';
@@ -23,6 +24,7 @@ export function Home() {
         <PortfolioSection />
         <TestimonialsSection />
         <FaqSection />
+        <ContactSection />
       </main>
     </div>
   );
