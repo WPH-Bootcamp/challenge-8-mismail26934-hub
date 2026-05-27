@@ -81,6 +81,13 @@ export interface ProcessStep {
   title: string;
   description: string;
 }
+
+export interface IndustryItem {
+  id: string;
+  label: string;
+  description: string;
+  image: string;
+}
 // ==========================================
 // TODO: Add more types as needed!
 // ==========================================

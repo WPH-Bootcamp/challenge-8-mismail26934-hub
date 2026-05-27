@@ -1,6 +1,7 @@
 import { Navbar } from '../components/layout/Navbar';
 import { FaqSection } from '../components/sections/FaqSection';
 import { HeroSection } from '../components/sections/HeroSection';
+import { IndustrySection } from '../components/sections/IndustrySection';
 import { PartnersSection } from '../components/sections/PartnersSection';
 import { PortfolioSection } from '../components/sections/PortfolioSection';
 import { ProcessSection } from '../components/sections/ProcessSection';
@@ -18,6 +19,7 @@ export function Home() {
         <StatisticSection />
         <ProcessSection />
         <ServicesSection />
+        <IndustrySection />
         <PortfolioSection />
         <TestimonialsSection />
         <FaqSection />
