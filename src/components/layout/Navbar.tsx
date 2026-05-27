@@ -3,6 +3,7 @@ import logoSymbol from '../../assets/images/icon/logo-symbol.png';
 import { navItems } from '../../data/navigation';
 import { cn } from '../../lib/cn';
 import { Button } from '../ui/Button';
+import { ThemeToggle } from '../ui/ThemeToggle';
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <header className='fixed inset-x-0 top-0 z-50 w-full border-b border-nav-border bg-nav'>
+    <header className='fixed inset-x-0 top-0 z-50 w-full border-b border-nav-border bg-nav backdrop-blur-[20px]'>
       <div
         className={cn(
           'flex flex-row justify-between items-center px-4 py-6 gap-[159px]',
@@ -76,6 +77,7 @@ export function Navbar() {
             'lg:gap-4'
           )}
         >
+          <ThemeToggle />
           <div className='hidden lg:contents'>
             <Button
               href='#contact'

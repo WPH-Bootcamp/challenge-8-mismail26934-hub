@@ -127,6 +127,11 @@ html.dark {
   background-color: var(--theme-hover);
 }
 
+@utility theme-toggle {
+  border: 1px solid var(--theme-border-muted);
+  background-color: transparent;
+}
+
 /* Display typography — Hero section (Figma) */
 @utility text-display-lg {
   font-size: 36px;
