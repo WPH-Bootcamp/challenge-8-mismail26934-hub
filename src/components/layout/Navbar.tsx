@@ -15,13 +15,13 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <header className='fixed inset-x-0 top-0 z-50 w-full border-b border-nav-border bg-nav backdrop-blur-[20px]'>
+    <header className='fixed inset-x-0 top-0 z-50 w-full border-b border-nav-border bg-nav'>
       <div
         className={cn(
           'flex flex-row justify-between items-center px-4 py-6 gap-[159px]',
           'md:h-[72px] md:gap-6 md:px-6',
           'lg:px-[140px] py-0 gap-[94px]',
-          'xl:px-[140px] xl:gap-x-10 ',
+          'xl:px-[140px] xl:gap-x-10',
           '2xl:gap-x-12'
         )}
       >

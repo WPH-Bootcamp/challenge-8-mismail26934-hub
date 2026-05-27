@@ -19,6 +19,7 @@
   --color-primary-light: #ff6c37;
   --font-sans: 'Quicksand', Helvetica, sans-serif;
   --font-logo: 'Outfit', Helvetica, sans-serif;
+  --breakpoint-figma: 90rem;
 }
 
 /* Default theme (light). Tanpa toggle, app akan memakai nilai ini. */
@@ -37,7 +38,7 @@ html {
   --theme-star: #f3b64c;
 
   --theme-nav-bg: rgb(255 255 255 / 0.8);
-  --theme-nav-border: #dfdfdf;
+  --theme-nav-border: transparent;
   --theme-mobile-menu-bg: rgb(255 255 255 / 0.98);
 
   --theme-hover: rgb(10 13 18 / 0.06);
@@ -54,13 +55,30 @@ html.dark {
   --theme-muted-dark: #535861;
 
   --theme-nav-bg: rgb(0 0 0 / 0.2);
-  --theme-nav-border: rgb(255 255 255 / 0.1);
+  --theme-nav-border: transparent;
   --theme-mobile-menu-bg: rgb(0 0 0 / 0.95);
 
   --theme-hover: rgb(255 255 255 / 0.1);
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+
+  @variant md {
+    html {
+      scroll-padding-top: 4.5rem;
+    }
+  }
+
+  @variant lg {
+    html {
+      scroll-padding-top: 5.25rem;
+    }
+  }
+
   body {
     margin: 0;
     font-family: var(--font-sans);
@@ -85,6 +103,10 @@ html.dark {
   color: var(--theme-page-text);
 }
 
+@utility bg-page {
+  background-color: var(--theme-page-bg);
+}
+
 @utility text-logo {
   color: var(--theme-logo-text);
 }
@@ -105,17 +127,81 @@ html.dark {
   background-color: var(--theme-hover);
 }
 
+/* Display typography — Hero section (Figma) */
+@utility text-display-lg {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  @variant lg {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility text-display-3xl {
+  font-size: 51px;
+  line-height: 68px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@utility text-body-md-semibold {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+@utility text-body-md-bold {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+@utility text-body-sm-bold {
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+/* Hero — Figma desktop layout */
+@utility hero-section__inner {
+  @variant lg {
+    position: absolute;
+    width: 100%;
+    min-height: 747px;
+    overflow: visible;
+  }
+}
+
+@utility hero-section__image {
+  @variant lg {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: 747px;
+    height: 747px;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: right center;
+    pointer-events: none;
+  }
+
+  @variant figma {
+    left: 696px;
+    right: auto;
+  }
+}
+
 /**
  * Custom Global Styles
  *
  * Add your custom global styles here if needed
  * Prefer using Tailwind utilities in components
  */
-
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
 
 /* Optional: Custom scrollbar styles */
 /* Uncomment if you want custom scrollbar
