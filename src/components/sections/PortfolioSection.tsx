@@ -5,7 +5,7 @@ export function PortfolioSection() {
   return (
     <section
       id='projects'
-      className='section-padding flex w-full flex-col items-center gap-16'
+      className='container-page section-padding flex w-full flex-col items-center gap-16'
     >
       <SectionHeader
         title="From Vision to Launch! Projects We're Proud Of"

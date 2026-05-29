@@ -19,7 +19,7 @@ export function Navbar() {
     <header className='fixed inset-x-0 top-0 z-50 w-full border-b border-nav-border bg-nav backdrop-blur-[20px]'>
       <div
         className={cn(
-          'flex flex-row justify-between items-center px-4 py-6 gap-[159px]',
+          'container-page flex flex-row justify-between items-center px-4 py-6 gap-[159px]',
           'md:h-[72px] md:gap-6 md:px-6',
           'lg:h-[84px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-x-6 lg:px-8',
           'xl:px-[140px] xl:gap-x-10',

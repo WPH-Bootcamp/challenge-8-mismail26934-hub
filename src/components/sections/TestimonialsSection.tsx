@@ -30,7 +30,7 @@ function TestimonialCard({
   avatar: string;
 }) {
   return (
-    <div className='relative w-[min(calc(100vw-2rem),361px)] shrink-0 overflow-visible pt-7 pb-10 md:w-[420px] md:pt-8 md:pb-10 lg:w-[594px] lg:pt-9'>
+    <div className=' relative w-[min(calc(100vw-2rem),361px)] shrink-0 overflow-visible pt-7 pb-10 md:w-[420px] md:pt-8 md:pb-10 lg:w-[594px] lg:pt-9'>
       <div className='testimonial-card-highlight relative isolate z-[1] box-border flex min-h-[280px] w-full flex-none flex-col items-center gap-4 overflow-visible rounded-2xl bg-card-solid border border-card px-4 pb-12 pt-5 md:gap-5 md:px-5 md:pt-6 lg:h-[292px] lg:min-h-0 lg:gap-6 lg:px-6'>
         <div
           className='pointer-events-none absolute left-[10.42%] top-0 z-[3] -translate-y-1/2'
@@ -165,8 +165,8 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section id='testimonials' className='section-padding'>
-      <div className='container-page mb-8 flex flex-col items-center md:mb-10 lg:mb-16'>
+    <section id='testimonials' className='container-page section-padding'>
+      <div className='flex flex-col items-center md:mb-10 lg:mb-16'>
         <SectionHeader
           title='What Partners Say About Working With Us'
           subtitle='Trusted voices. Real experiences. Proven results.'
