@@ -28,30 +28,30 @@ export function MessageReceivedPopup({
       role='presentation'
     >
       <div
-        className='box-border absolute left-[calc(50%-259px)] flex h-[479px] w-[518px] flex-col items-start overflow-hidden rounded-2xl border border-[#252B37] bg-[#0A0D12] p-0'
+        className='box-border absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 flex h-[374px] w-[353px] flex-col items-start overflow-hidden rounded-2xl border border-[#252B37] md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:h-[479px] md:w-[518px] md:bg-[#0A0D12]'
         onClick={(e) => e.stopPropagation()}
         role='dialog'
         aria-modal='true'
         aria-labelledby='message-received-title'
       >
-        <div className='flex h-[225px] w-full items-center justify-center'>
+        <div className='flex h-[160px] w-full items-center justify-center gap-2 bg-[#0A0D12] p-2 md:h-[225px] md:bg-transparent md:p-0'>
           <img
             src={imageSrc}
             alt='Message received'
-            className='h-[228px] w-[228px] object-contain'
+            className='h-[144px] w-[144px] object-contain md:h-[228px] md:w-[228px]'
           />
         </div>
 
-        <div className='flex h-[254px] w-full flex-col items-center gap-8 rounded-b-2xl rounded-t-none bg-black px-8 pb-10 pt-8'>
-          <div className='flex h-[102px] w-[454px] flex-col items-center gap-2 p-0'>
+        <div className='flex h-[214px] w-full flex-col items-center gap-4 rounded-b-2xl rounded-t-none bg-black px-6 pb-10 pt-6 md:h-[254px] md:gap-8 md:px-8 md:pt-8'>
+          <div className='flex h-[90px] w-[305px] flex-col items-center gap-0.5 p-0 md:h-[102px] md:w-[454px] md:gap-2'>
             <h2
               id='message-received-title'
               className='text-center text-base font-medium leading-6 text-white'
             >
               Message Received!
             </h2>
-            <p className='h-[60px] w-[454px] text-center text-base font-medium leading-6 text-white/75'>
-              Thanks for reaching out - we&apos;ll get back to you as soon as
+            <p className='w-[305px] text-center text-base font-medium leading-6 text-white/75 md:h-[60px] md:w-[454px]'>
+              Thanks for reaching out - we'll get back to you as soon as
               possible.
             </p>
           </div>
@@ -59,7 +59,7 @@ export function MessageReceivedPopup({
           <button
             type='button'
             onClick={onBackHome}
-            className='inline-flex h-[48px] w-[361px] items-center justify-center rounded-full bg-[#FF623E] px-4 text-sm font-semibold text-white transition hover:bg-[#ff5a36] focus:outline-none focus:ring-2 focus:ring-[#FF623E] focus:ring-offset-2 focus:ring-offset-black'
+            className='inline-flex h-11 w-[305px] items-center justify-center gap-1 rounded-full bg-[#FF623E] p-2 text-sm font-semibold text-white shadow-[inset_4px_4px_4px_rgba(255,255,255,0.25)] transition hover:bg-[#ff5a36] focus:outline-none focus:ring-2 focus:ring-[#FF623E] focus:ring-offset-2 focus:ring-offset-black md:h-12 md:w-[361px] md:px-4 md:shadow-none'
           >
             Back to Home
           </button>
