@@ -103,7 +103,29 @@ function ProcessMarker({
   );
 }
 
+function ProcessTimelineRail({
+  isLast,
+  mobile,
+}: {
+  isLast: boolean;
+  mobile?: boolean;
+}) {
+  if (isLast) return null;
+
+  return (
+    <div
+      className={cn(
+        'w-px flex-1 bg-border',
+        mobile ? 'mt-1 min-h-4' : 'mt-0 min-h-4'
+      )}
+      aria-hidden='true'
+    />
+  );
+}
+
 export function ProcessSection() {
+  const lastStepIndex = processSteps.length - 1;
+
   return (
     <section id='process' className='section-padding'>
       <div className='container-page flex flex-col items-center gap-6 lg:gap-16'>
@@ -113,17 +135,16 @@ export function ProcessSection() {
         />
 
         <div className='flex w-full max-w-xl flex-col lg:hidden'>
-          <div className='relative flex flex-col gap-4'>
-            <div
-              className='absolute bottom-10 left-5 top-7 w-px bg-border'
-              aria-hidden='true'
-            />
-            {processSteps.map((step) => (
-              <div
-                key={step.number}
-                className='relative flex items-start gap-3'
-              >
-                <ProcessMarker number={step.number} mobile />
+          <div className='flex flex-col gap-4'>
+            {processSteps.map((step, index) => (
+              <div key={step.number} className='flex items-stretch gap-3'>
+                <div className='flex w-10 shrink-0 flex-col items-center'>
+                  <ProcessMarker number={step.number} mobile />
+                  <ProcessTimelineRail
+                    isLast={index === lastStepIndex}
+                    mobile
+                  />
+                </div>
                 <div className='min-w-0 flex-1'>
                   <ProcessCard
                     title={step.title}
@@ -136,16 +157,12 @@ export function ProcessSection() {
           </div>
         </div>
 
-        <div className='relative hidden w-full max-w-5xl lg:block'>
-          <div
-            className='absolute left-1/2 top-6 bottom-6 w-px -translate-x-1/2 bg-border'
-            aria-hidden='true'
-          />
+        <div className='hidden w-full max-w-5xl lg:block'>
           <div className='flex flex-col gap-4'>
-            {processSteps.map((step) => (
+            {processSteps.map((step, index) => (
               <div
                 key={step.number}
-                className='grid grid-cols-[1fr_48px_1fr] items-center gap-6'
+                className='grid grid-cols-[1fr_48px_1fr] items-stretch gap-6'
               >
                 <div className='flex justify-end'>
                   {step.side === 'left' ? (
@@ -159,8 +176,9 @@ export function ProcessSection() {
                     <div className='w-full max-w-[400px]' aria-hidden='true' />
                   )}
                 </div>
-                <div className='flex justify-center'>
+                <div className='flex flex-col items-center'>
                   <ProcessMarker number={step.number} />
+                  <ProcessTimelineRail isLast={index === lastStepIndex} />
                 </div>
                 <div className='flex justify-start'>
                   {step.side === 'right' ? (

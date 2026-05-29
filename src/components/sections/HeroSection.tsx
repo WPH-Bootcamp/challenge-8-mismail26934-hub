@@ -18,11 +18,15 @@ export function HeroSection() {
             aria-hidden
             className='hero-section__image hidden lg:block'
           />
-          <div className='relative flex w-full max-w-[653px] flex-col items-start gap-10 lg:min-h-[747px] lg:justify-start lg:pt-[120px] lg:pl-[140px]'>
-            <header className='flex w-full flex-col items-start gap-2'>
-              <h1 className="w-full font-['Quicksand',Helvetica] text-display-lg font-bold text-fg lg:text-display-3xl">
-                <p className='text-fg'>Your Tech Partner for </p>
-                <p className='text-primary-light'>Smarter Growth</p>
+          <div className='relative flex w-full flex-col items-start gap-10 lg:min-h-[747px] lg:justify-start lg:pt-[120px] lg:pl-[140px]'>
+            <header className='flex w-full min-w-0 max-w-[653px] flex-col items-start gap-2'>
+              <h1 className="hero-title w-full font-['Quicksand',Helvetica] lg:w-[653px]">
+                <span className='hero-title__line--lead text-fg'>
+                  Your Tech Partner for
+                </span>
+                <span className='hero-title__line text-primary-light'>
+                  Smarter Growth
+                </span>
               </h1>
               <p className='w-full text-body-md-semibold text-fg lg:text-xl lg:font-semibold lg:leading-[34px]'>
                 We deliver tailored IT solutions to help you scale with speed

@@ -1,12 +1,15 @@
 import airbnbLogo from '../../assets/images/company-logo/airbnb.png';
+import adobeLogo from '../../assets/images/company-logo/adobe.png';
 import databricksLogo from '../../assets/images/company-logo/databricks.png';
 import dropboxLogo from '../../assets/images/company-logo/dropbox.png';
 import paypallLogo from '../../assets/images/company-logo/paypall.png';
 import postmanLogo from '../../assets/images/company-logo/postman.png';
 import upworkLogo from '../../assets/images/company-logo/upwork.png';
 import zoomLogo from '../../assets/images/company-logo/zoom.png';
+import netflixLogo from '../../assets/images/company-logo/netflix.png';
 
 const partners = [
+  { name: 'Adobe', src: adobeLogo },
   { name: 'Upwork', src: upworkLogo },
   { name: 'Zoom', src: zoomLogo },
   { name: 'Postman', src: postmanLogo },
@@ -14,6 +17,7 @@ const partners = [
   { name: 'Airbnb', src: airbnbLogo },
   { name: 'Dropbox', src: dropboxLogo },
   { name: 'PayPal', src: paypallLogo },
+  { name: 'Netflix', src: netflixLogo },
 ];
 
 const marqueePartners = [...partners, ...partners];
