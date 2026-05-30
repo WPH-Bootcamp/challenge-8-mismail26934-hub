@@ -8,6 +8,7 @@
   --color-primary-light: #ff6c37;
   --color-accent-gold: var(--theme-star);
   --color-surface: var(--theme-surface);
+  --color-content: var(--theme-content);
   --color-border: var(--theme-border);
   --color-border-muted: var(--theme-border-muted);
   --color-muted: var(--theme-muted);
@@ -26,6 +27,7 @@
 
 html.dark {
   --theme-surface: #0a0d12;
+  --theme-content: #000000;
   --theme-border: #181d27;
   --theme-border-muted: #252b37;
   --theme-muted: #a4a7ae;
@@ -50,6 +52,7 @@ html.dark {
 
 html.light {
   --theme-surface: #fafafa;
+  --theme-content: #fafafa;
   --theme-border: #dedcdc;
   --theme-border-muted: #dfdfdf;
   --theme-muted: #717680;
@@ -688,7 +691,7 @@ html.light {
   align-items: center;
   gap: 1rem;
   border-radius: 0 0 1rem 1rem;
-  background-color: #000000;
+  background-color: var(--theme-content);
   padding: 1.5rem 1.5rem 2.5rem;
 
   @media (min-width: 768px) {
@@ -717,9 +720,9 @@ html.light {
 .message-popup__title {
   text-align: center;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--theme-page-text);
 }
 
 .message-popup__description {
@@ -728,7 +731,7 @@ html.light {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  color: rgb(255 255 255 / 0.75);
+  color: var(--theme-muted);
 
   @media (min-width: 768px) {
     height: 60px;
