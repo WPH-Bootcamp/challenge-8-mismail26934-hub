@@ -4,7 +4,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'What services do you offer?',
     answer:
-      'We provide custom web/app development, cloud solutions, UX/UI design, cybersecurity, and IT consulting.',
+      'We provide custom web/app development, cloud solutions, UX/UI design, and more.',
   },
   {
     question: 'How do I know if this is right for my business?',

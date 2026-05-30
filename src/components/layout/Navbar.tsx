@@ -5,8 +5,25 @@ import { cn } from '../../lib/cn';
 import { Button } from '../ui/Button';
 import { ThemeToggle } from '../ui/ThemeToggle';
 
+const SCROLL_THRESHOLD = 8;
+
+const navBlur =
+  'backdrop-blur-[20px] supports-backdrop-filter:backdrop-blur-[20px]';
+const navBlurOff = 'backdrop-blur-0 supports-backdrop-filter:backdrop-blur-0';
+
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -16,10 +33,17 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <header className='fixed inset-x-0 top-0 z-50 w-full border-b border-nav-border bg-nav backdrop-blur-[20px]'>
+    <header
+      className={cn(
+        'fixed inset-x-0 top-0 z-50 w-full border-b transition-[background-color,border-color,backdrop-filter] duration-300',
+        scrolled
+          ? cn('border-nav-border bg-nav', navBlur)
+          : cn('border-transparent bg-transparent', navBlurOff)
+      )}
+    >
       <div
         className={cn(
-          'container-page flex flex-row justify-between items-center px-4 py-6 gap-[159px]',
+          'container-page flex flex-row justify-between items-center px-4 py-6',
           'md:h-[72px] md:gap-6 md:px-6',
           'lg:h-[84px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-x-6 lg:px-8',
           'xl:px-[140px] xl:gap-x-10',
@@ -33,12 +57,12 @@ export function Navbar() {
         >
           <img
             src={logoSymbol}
-            alt=''
+            alt='TechPartner Logo'
             className='h-7 w-7 shrink-0 object-contain md:h-8 md:w-8'
             aria-hidden='true'
           />
-          <span className='truncate font-[family-name:var(--font-logo)] text-lg font-semibold leading-7 text-logo md:text-xl md:leading-8 lg:text-2xl lg:leading-9'>
-            TechPartner
+          <span className='font-[family-name:var(--font-logo)] text-lg font-semibold leading-7 text-logo md:text-xl md:leading-8 lg:text-2xl'>
+            Your Logo
           </span>
         </a>
 
@@ -84,7 +108,7 @@ export function Navbar() {
               size='md'
               className='min-w-0 shrink-0 lg:min-w-[120px] xl:min-w-[160px] 2xl:min-w-[197px]'
             >
-              Let&apos;s Talk
+              Let's Talk
             </Button>
           </div>
 
@@ -129,9 +153,12 @@ export function Navbar() {
       {/* Mobile menu */}
       <div
         className={cn(
-          'overflow-y-auto border-t border-nav-border bg-mobile-menu backdrop-blur-[20px]',
+          'overflow-y-auto border-t transition-[background-color,border-color,backdrop-filter] duration-300',
           'max-h-[calc(100dvh-64px)] md:max-h-[calc(100dvh-72px)]',
           'lg:hidden',
+          scrolled || menuOpen
+            ? cn('border-nav-border bg-mobile-menu', navBlur)
+            : cn('border-transparent bg-transparent', navBlurOff),
           menuOpen ? 'block' : 'hidden'
         )}
       >
@@ -147,7 +174,7 @@ export function Navbar() {
             </a>
           ))}
           <Button href='#contact' className='mt-2 w-full md:mt-3'>
-            Let&apos;s Talk
+            Let's Talk
           </Button>
         </nav>
       </div>

@@ -9,7 +9,7 @@ export function ServicesSection() {
         <SectionHeader
           title='Smart IT Solutions That Grow With You'
           subtitle='Tailored tech to boost efficiency, security, and results.'
-          className='[&_h2]:font-semibold lg:[&_h2]:font-bold'
+          className='[&_h2]:font-semibold'
         />
         <div className='flex w-full flex-wrap justify-center gap-5 lg:justify-between lg:gap-10'>
           {serviceRows.flat().map((service) => (

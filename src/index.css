@@ -164,10 +164,10 @@ html.light {
 }
 
 @utility text-display-xl {
-  font-size: 28px;
-  line-height: 38px;
+  font-size: 40px;
+  line-height: 56px;
   font-weight: 700;
-  letter-spacing: -0.56px;
+  letter-spacing: -0.02em;
 }
 
 @utility text-display-lg {
@@ -207,7 +207,7 @@ html.light {
   font-size: 28px;
   line-height: 38px;
   font-weight: 700;
-  letter-spacing: -0.56px;
+  letter-spacing: -0.02em;
 
   @variant lg {
     font-size: 28px;
@@ -219,7 +219,7 @@ html.light {
   font-size: 16px;
   line-height: 30px;
   font-weight: 700;
-  letter-spacing: -0.32px;
+  letter-spacing: -0.02em;
 
   @variant lg {
     font-size: 24px;
@@ -297,12 +297,12 @@ html.light {
 @utility hero-title {
   font-weight: 700;
   letter-spacing: -0.02em;
-  font-size: 28px;
-  line-height: 38px;
+  font-size: 36px;
+  line-height: 44px;
 
   @variant md {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 41px;
+    line-height: 58px;
   }
 
   @variant lg {

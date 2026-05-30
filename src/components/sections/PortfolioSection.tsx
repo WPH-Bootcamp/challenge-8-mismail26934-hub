@@ -10,7 +10,6 @@ export function PortfolioSection() {
       <SectionHeader
         title="From Vision to Launch! Projects We're Proud Of"
         subtitle='Take a closer look at our recent work powering startups, enterprises, and everything in between.'
-        className='max-w-none [&_h2]:text-display-xl [&_p]:text-lg [&_p]:font-medium [&_p]:leading-8 [&_p]:text-muted'
       />
       <div className='grid w-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3'>
         {portfolios.map((portfolio) => (

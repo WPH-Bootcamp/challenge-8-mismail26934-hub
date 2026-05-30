@@ -15,24 +15,24 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <section className='section-padding !pb-10 !pt-10'>
+    <section className='section-padding'>
       <div className='container-page'>
         <div className='flex flex-col gap-6 rounded-3xl border border-border-muted bg-surface p-5 sm:p-6 md:gap-8 md:p-8 lg:gap-10 lg:p-10'>
           <div className='flex flex-col items-start justify-between gap-6 md:flex-row md:items-start'>
-            <h2 className='max-w-[281px] text-display-sm font-bold text-fg lg:max-w-xs lg:text-display-lg'>
-              LET&apos;S DISCUSS YOUR IDEAS
-            </h2>
             <div className='flex shrink-0 items-center gap-2.5'>
               <img
                 src={logoSymbol}
-                alt=''
+                alt='TechPartner Logo'
                 className='h-8 w-8 object-contain'
                 aria-hidden='true'
               />
               <span className='font-[family-name:var(--font-logo)] text-xl font-semibold text-logo sm:text-2xl'>
-                TechPartner
+                Your Logo
               </span>
             </div>
+            <h2 className='max-w-[281px] text-display-sm font-bold text-fg lg:max-w-xs lg:text-display-lg'>
+              LET'S DISCUSS YOUR IDEAS
+            </h2>
           </div>
 
           <Separator className='bg-border-muted' />
@@ -40,14 +40,14 @@ export function Footer() {
           <div className='flex flex-col gap-6'>
             <footer className='flex flex-col items-start justify-between gap-6 md:flex-row md:flex-wrap md:items-center'>
               <nav
-                className='flex flex-col gap-2 md:flex-row md:flex-wrap md:gap-1'
+                className='flex flex-col gap-2 items-start p-0 md:flex-row md:flex-wrap md:max-w-full'
                 aria-label='Footer'
               >
                 {footerLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className='rounded-full px-4 py-2 text-body-sm-medium text-fg transition-colors hover:bg-hover lg:text-base lg:font-medium'
+                    className='rounded-full py-2 text-body-sm-medium text-fg transition-colors hover:bg-hover lg:text-base lg:font-medium lg:leading-8'
                   >
                     {link.label}
                   </a>
@@ -64,16 +64,12 @@ export function Footer() {
                     <img
                       src={social.icon}
                       alt=''
-                      className='social-icon h-5 w-5 object-contain'
+                      className='social-icon object-contain'
                     />
                   </a>
                 ))}
               </div>
             </footer>
-
-            <p className='text-sm text-muted'>
-              © {new Date().getFullYear()} TechPartner. All rights reserved.
-            </p>
           </div>
         </div>
       </div>

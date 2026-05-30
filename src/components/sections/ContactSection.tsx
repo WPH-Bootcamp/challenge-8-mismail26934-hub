@@ -71,21 +71,6 @@ export function ContactSection() {
             </div>
             <div className='flex flex-col gap-1.5'>
               <label
-                htmlFor='phone'
-                className='text-body-sm-bold text-fg lg:text-sm lg:font-bold'
-              >
-                Phone Number
-              </label>
-              <Input
-                id='phone'
-                name='phone'
-                type='tel'
-                placeholder='Enter your phone number'
-                className='text-body-sm-medium lg:text-base'
-              />
-            </div>
-            <div className='flex flex-col gap-1.5'>
-              <label
                 htmlFor='message'
                 className='text-body-sm-bold text-fg lg:text-sm lg:font-bold'
               >
