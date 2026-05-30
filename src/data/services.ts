@@ -30,8 +30,7 @@ export const serviceRows: ServiceItem[][] = [
   [
     {
       title: 'Cloud Solutions',
-      description:
-        'Secure and flexible cloud infrastructure for your growth.',
+      description: 'Secure and flexible cloud infrastructure for your growth.',
       image: cloudIcon,
     },
     {
@@ -72,4 +71,3 @@ export const serviceOptions = [
   'Software Development',
   'Other',
 ];
-

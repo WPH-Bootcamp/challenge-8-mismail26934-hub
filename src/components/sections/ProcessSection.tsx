@@ -82,8 +82,8 @@ function ProcessMarker({
       className={cn(
         'relative z-10 flex shrink-0 items-center justify-center rounded-full bg-primary',
         mobile
-          ? 'h-10 w-10 p-[6.67px] shadow-[0_0_0_4px_var(--theme-page-bg)]'
-          : 'h-12 w-12 shadow-[0_0_0_6px_var(--theme-page-bg)]'
+          ? 'h-10 w-10 p-process-icon shadow-process-marker'
+          : 'h-12 w-12 shadow-process-marker-lg'
       )}
     >
       <span
@@ -161,14 +161,14 @@ export function ProcessSection() {
               >
                 <div className='flex justify-end'>
                   {step.side === 'left' ? (
-                    <div className='w-full max-w-[400px]'>
+                    <div className='w-full max-w-card'>
                       <ProcessCard
                         title={step.title}
                         description={step.description}
                       />
                     </div>
                   ) : (
-                    <div className='w-full max-w-[400px]' aria-hidden='true' />
+                    <div className='w-full max-w-card' aria-hidden='true' />
                   )}
                 </div>
                 <div className='flex flex-col items-center'>
@@ -177,14 +177,14 @@ export function ProcessSection() {
                 </div>
                 <div className='flex justify-start'>
                   {step.side === 'right' ? (
-                    <div className='w-full max-w-[400px]'>
+                    <div className='w-full max-w-card'>
                       <ProcessCard
                         title={step.title}
                         description={step.description}
                       />
                     </div>
                   ) : (
-                    <div className='w-full max-w-[400px]' aria-hidden='true' />
+                    <div className='w-full max-w-card' aria-hidden='true' />
                   )}
                 </div>
               </div>

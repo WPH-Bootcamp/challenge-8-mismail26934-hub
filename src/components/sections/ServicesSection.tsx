@@ -11,12 +11,9 @@ export function ServicesSection() {
           subtitle='Tailored tech to boost efficiency, security, and results.'
           className='[&_h2]:font-semibold'
         />
-        <div className='flex w-full flex-wrap justify-center gap-5 lg:justify-between lg:gap-10'>
+        <div className='grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
           {serviceRows.flat().map((service) => (
-            <div
-              key={service.title}
-              className='w-full min-w-[280px] max-w-[400px] flex-[1_1_320px]'
-            >
+            <div key={service.title} className='min-w-0'>
               <ServiceCard service={service} />
             </div>
           ))}

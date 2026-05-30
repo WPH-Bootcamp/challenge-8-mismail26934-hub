@@ -8,7 +8,7 @@ export function FaqSection() {
     <section id='faq' className='section-padding'>
       <div className='container-page flex flex-col gap-6 lg:gap-12'>
         <div className='flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-6'>
-          <h2 className='max-w-[331px] text-display-sm font-bold text-fg lg:max-w-sm lg:text-display-xl'>
+          <h2 className='max-w-faq-title text-display-sm font-bold text-fg lg:max-w-sm lg:text-display-xl'>
             Need Help? Start Here.
           </h2>
           <p className='text-section-subtitle text-muted lg:max-w-xs lg:text-right'>
@@ -16,7 +16,7 @@ export function FaqSection() {
           </p>
         </div>
         <Separator className='bg-border-muted' />
-        <div className='flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-[73px]'>
+        <div className='flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-faq'>
           <div className='min-w-0 flex-1'>
             <Accordion items={faqs} />
           </div>

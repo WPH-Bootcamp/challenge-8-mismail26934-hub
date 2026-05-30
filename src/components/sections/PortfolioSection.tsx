@@ -20,13 +20,13 @@ export function PortfolioSection() {
             <img
               src={portfolio.image}
               alt={portfolio.title}
-              className='h-[373px] w-full rounded-2xl object-cover object-center transition-[transform,box-shadow] duration-300 ease-out group-hover:scale-[1.02] group-hover:shadow-[0_16px_40px_rgba(255,98,62,0.2)] group-focus-within:scale-[1.02] group-focus-within:shadow-[0_16px_40px_rgba(255,98,62,0.2)] motion-reduce:transition-none'
+              className='h-portfolio w-full rounded-2xl object-cover object-center transition-[transform,box-shadow] duration-300 ease-out group-hover:scale-[1.02] group-hover:shadow-portfolio-hover group-focus-within:scale-[1.02] group-focus-within:shadow-portfolio-hover motion-reduce:transition-none'
             />
             <div className='flex w-full flex-col items-start'>
-              <span className='text-base font-medium leading-[30px] text-primary'>
+              <span className='text-base font-medium leading-portfolio-subtitle text-primary'>
                 {portfolio.category}
               </span>
-              <h3 className='text-xl font-bold leading-[34px] text-fg transition-colors duration-300 ease-out group-hover:text-primary group-focus-within:text-primary motion-reduce:transition-none'>
+              <h3 className='text-xl font-bold leading-portfolio-title text-fg transition-colors duration-300 ease-out group-hover:text-primary group-focus-within:text-primary motion-reduce:transition-none'>
                 {portfolio.title}
               </h3>
             </div>

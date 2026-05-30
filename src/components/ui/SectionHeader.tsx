@@ -16,7 +16,7 @@ export function SectionHeader({
   return (
     <header
       className={cn(
-        'flex w-full max-w-4xl flex-col gap-[11px]',
+        'flex w-full max-w-4xl flex-col gap-section-header',
         align === 'center'
           ? 'mx-auto items-center text-center'
           : 'items-start text-left',

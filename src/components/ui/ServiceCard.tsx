@@ -12,7 +12,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
         <img
           src={service.image}
           alt=''
-          className='absolute left-5 top-[-21px] z-[2] h-16 w-16 object-contain transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-0.5 lg:top-[-26px] lg:h-20 lg:w-20'
+          className='absolute left-5 -top-service-icon-offset z-[2] h-16 w-16 object-contain transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-0.5 lg:-top-service-icon-offset-lg lg:h-20 lg:w-20'
           aria-hidden='true'
         />
         <div className='flex flex-col gap-1'>

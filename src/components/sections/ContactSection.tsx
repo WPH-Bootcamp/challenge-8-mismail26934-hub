@@ -35,7 +35,7 @@ export function ContactSection() {
         />
         <form
           onSubmit={handleSubmit}
-          className='flex w-full max-w-[720px] flex-col gap-10'
+          className='flex w-full max-w-contact flex-col gap-10'
         >
           <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-1.5'>
@@ -72,7 +72,7 @@ export function ContactSection() {
                 name='message'
                 placeholder='Enter your message'
                 required
-                className='min-h-[134px] text-body-responsive lg:min-h-[120px]'
+                className='min-h-textarea text-body-responsive lg:min-h-30'
               />
             </div>
             <fieldset className='flex flex-col gap-3.5'>

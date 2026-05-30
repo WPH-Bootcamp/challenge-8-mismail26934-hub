@@ -15,7 +15,7 @@ export function Home() {
   return (
     <div className='min-h-screen overflow-x-hidden bg-page text-fg'>
       <Navbar />
-      <main className='pt-16 md:pt-[72px] lg:pt-[84px]'>
+      <main className='pt-16 md:pt-18 lg:pt-21'>
         <HeroSection />
         <PartnersSection />
         <StatisticSection />

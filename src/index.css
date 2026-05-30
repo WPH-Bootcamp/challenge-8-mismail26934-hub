@@ -23,6 +23,56 @@
   --font-sans: 'Quicksand', Helvetica, sans-serif;
   --font-logo: 'Outfit', Helvetica, sans-serif;
   --breakpoint-figma: 90rem;
+
+  /* Layout spacing (Figma) */
+  --spacing-gutter: 140px;
+  --spacing-section-header: 11px;
+  --spacing-faq: 73px;
+  --spacing-process-icon: 6.67px;
+  --spacing-service-icon-offset: 21px;
+  --spacing-service-icon-offset-lg: 26px;
+
+  /* Widths */
+  --width-testimonial-md: 420px;
+  --width-testimonial-lg: 594px;
+  --min-width-cta-wide: 197px;
+
+  /* Max widths */
+  --max-width-contact: 720px;
+  --max-width-hero-copy: 653px;
+  --max-width-hero-image: 747px;
+  --max-width-card: 400px;
+  --max-width-footer-title: 281px;
+  --max-width-faq-title: 331px;
+  --max-width-industry: 840px;
+  --max-width-stat-label: 180px;
+  --max-width-testimonial: 361px;
+
+  /* Heights */
+  --spacing-hero-content: 230px;
+  --min-height-textarea: 134px;
+  --height-testimonial: 292px;
+  --min-height-testimonial: 280px;
+  --height-portfolio: 373px;
+  --height-industry-lg: 351px;
+  --max-height-hero-mobile: 391px;
+  --max-height-hero-mobile-sm: 440px;
+
+  /* Sizes */
+  --size-stat-xs: 172.5px;
+  --size-avatar-md: 70px;
+  --size-avatar-lg: 75px;
+
+  /* Typography */
+  --text-nav-link: 15px;
+  --leading-hero-subtitle: 34px;
+  --leading-portfolio-subtitle: 30px;
+  --leading-portfolio-title: 34px;
+
+  /* Shadows */
+  --shadow-portfolio-hover: 0 16px 40px rgb(255 98 62 / 0.2);
+  --shadow-process-marker: 0 0 0 4px var(--theme-page-bg);
+  --shadow-process-marker-lg: 0 0 0 6px var(--theme-page-bg);
 }
 
 html.dark {
@@ -139,7 +189,7 @@ html.light {
   }
 
   @variant lg {
-    padding-inline: 140px;
+    padding-inline: var(--spacing-gutter);
     padding-block: 5rem;
   }
 }
@@ -152,7 +202,7 @@ html.light {
   }
 
   @variant lg {
-    padding-inline: 140px;
+    padding-inline: var(--spacing-gutter);
   }
 }
 
@@ -164,10 +214,10 @@ html.light {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 24px;
 
   @variant lg {
-    gap: 4rem;
+    gap: 40px;
   }
 }
 
@@ -374,7 +424,7 @@ html.light {
 
 @utility hero-title__line--lead {
   display: block;
-  white-space: nowrap;
+  white-space: wrap;
 }
 
 @utility text-logo {

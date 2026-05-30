@@ -13,12 +13,12 @@ export function StatisticSection() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className='flex aspect-square size-[172.5px] shrink-0 flex-col items-center justify-center gap-1.5 rounded-full border border-border bg-surface p-4 md:size-[180px] md:p-5 lg:size-[200px] lg:p-6 xl:size-[220px] xl:p-6'
+              className='flex aspect-square size-stat-xs shrink-0 flex-col items-center justify-center gap-1.5 rounded-full border border-border bg-surface p-4 md:size-45 md:p-5 lg:size-50 lg:p-6 xl:size-55 xl:p-6'
             >
               <div className='text-display-lg font-bold text-primary lg:text-display-2xl'>
                 {stat.value}
               </div>
-              <div className='text-body-sm-semibold text-center text-fg lg:max-w-[180px] lg:px-3 lg:text-xl lg:font-semibold lg:leading-snug'>
+              <div className='text-body-sm-semibold text-center text-fg lg:max-w-stat-label lg:px-3 lg:text-xl lg:font-semibold lg:leading-snug'>
                 {stat.label}
               </div>
             </div>

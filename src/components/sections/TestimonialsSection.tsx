@@ -34,10 +34,10 @@ function TestimonialCard({
   isActive: boolean;
 }) {
   return (
-    <div className='relative w-[min(calc(100vw-2rem),361px)] shrink-0 overflow-visible pt-7 pb-10 md:w-[420px] md:pt-8 md:pb-10 lg:w-[594px] lg:pt-9'>
+    <div className='relative w-[min(calc(100vw-2rem),var(--max-width-testimonial))] shrink-0 overflow-visible pt-7 pb-10 md:w-testimonial-md md:pt-8 md:pb-10 lg:w-testimonial-lg lg:pt-9'>
       <div
         className={cn(
-          'testimonial-card-highlight relative isolate z-[1] box-border flex min-h-[280px] w-full flex-none flex-col items-center gap-4 overflow-visible rounded-2xl bg-card-solid border border-card px-4 pb-12 pt-5 md:gap-5 md:px-5 md:pt-6 lg:h-[292px] lg:min-h-0 lg:gap-6 lg:px-6',
+          'testimonial-card-highlight relative isolate z-[1] box-border flex min-h-testimonial w-full flex-none flex-col items-center gap-4 overflow-visible rounded-2xl bg-card-solid border border-card px-4 pb-12 pt-5 md:gap-5 md:px-5 md:pt-6 lg:h-testimonial lg:min-h-0 lg:gap-6 lg:px-6',
           isActive && 'testimonial-card-highlight--active'
         )}
       >
@@ -45,7 +45,7 @@ function TestimonialCard({
           className='pointer-events-none absolute left-[10.42%] top-0 z-[3] -translate-y-1/2'
           aria-hidden='true'
         >
-          <div className='relative h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px]'>
+          <div className='relative h-14 w-14 md:h-16 md:w-16 lg:size-18'>
             <img
               src={doubleQuote}
               alt=''
@@ -79,7 +79,7 @@ function TestimonialCard({
         <img
           src={avatar}
           alt={name}
-          className='absolute bottom-0 left-1/2 z-30 h-16 w-16 -translate-x-1/2 translate-y-1/2 rounded-full border-4 border-avatar-ring object-cover md:h-[70px] md:w-[70px] lg:h-[75px] lg:w-[75px]'
+          className='absolute bottom-0 left-1/2 z-30 h-16 w-16 -translate-x-1/2 translate-y-1/2 rounded-full border-4 border-avatar-ring object-cover md:size-avatar-md lg:size-avatar-lg'
         />
       </div>
     </div>

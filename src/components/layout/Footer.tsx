@@ -19,7 +19,7 @@ export function Footer() {
       <div className='container-page'>
         <div className='flex flex-col gap-6 rounded-3xl border border-border-muted bg-surface p-5 sm:p-6 md:gap-8 md:p-8 lg:gap-10 lg:p-10'>
           <div className='flex flex-col items-start justify-between gap-6 md:flex-row md:items-start'>
-            <div className='flex shrink-0 items-center gap-2.5'>
+            <div className='order-1 flex shrink-0 items-center gap-2.5 lg:order-2'>
               <img
                 src={logoSymbol}
                 alt='TechPartner Logo'
@@ -30,7 +30,7 @@ export function Footer() {
                 Your Logo
               </span>
             </div>
-            <h2 className='max-w-[281px] text-display-sm font-bold text-fg lg:max-w-xs lg:text-display-lg'>
+            <h2 className='order-2 max-w-footer-title text-display-sm font-bold text-fg lg:order-1 lg:max-w-xs lg:text-display-lg'>
               LET'S DISCUSS YOUR IDEAS
             </h2>
           </div>

@@ -48,14 +48,14 @@ export function IndustrySection() {
             })}
           </nav>
 
-          <div className='flex min-w-0 flex-col gap-4 sm:gap-5 lg:max-w-[840px]'>
+          <div className='flex min-w-0 flex-col gap-4 sm:gap-5 lg:max-w-industry'>
             <p className='w-full text-body-sm-medium leading-7 text-fg sm:text-base sm:leading-8 lg:text-lg lg:font-medium'>
               {active.description}
             </p>
             <img
               src={active.image}
               alt={active.label}
-              className='h-[200px] w-full rounded-xl object-cover md:h-[280px] lg:h-[351px] lg:rounded-3xl'
+              className='h-50 w-full rounded-xl object-cover md:h-70 lg:h-industry-lg lg:rounded-3xl'
             />
           </div>
         </div>

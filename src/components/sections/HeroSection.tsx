@@ -8,7 +8,7 @@ export function HeroSection() {
   const heroImage = isDark ? heroImageDark : heroImageLight;
 
   return (
-    <section id='about' className='overflow-x-hidden bg-page lg:-mt-[84px]'>
+    <section id='about' className='overflow-x-hidden bg-page lg:-mt-21'>
       <div className='container-page hero-container'>
         <div className='hero-section__inner lg:pb-0'>
           <img
@@ -18,9 +18,9 @@ export function HeroSection() {
             aria-hidden
             className='hero-section__image hidden lg:block'
           />
-          <div className='relative flex w-full flex-col items-start px-4 gap-10 lg:justify-start lg:pt-[230px] lg:pl-[140px]'>
-            <header className='flex w-full min-w-0 max-w-[653px] flex-col items-start gap-2'>
-              <h1 className="hero-title w-full font-['Quicksand',Helvetica] lg:w-[653px]">
+          <div className='relative flex w-full flex-col items-start px-4 gap-10 lg:justify-start lg:pt-hero-content lg:pl-gutter'>
+            <header className='flex w-full min-w-0 max-w-hero-copy flex-col items-start gap-2'>
+              <h1 className="hero-title w-full font-['Quicksand',Helvetica] lg:max-w-hero-copy">
                 <p className='hero-title__line--lead text-fg'>
                   Your Tech Partner for
                 </p>
@@ -28,7 +28,7 @@ export function HeroSection() {
                   Smarter Growth
                 </p>
               </h1>
-              <p className='w-full text-body-md-semibold text-fg lg:text-xl lg:font-semibold lg:leading-[34px]'>
+              <p className='w-full text-body-md-semibold text-fg lg:text-xl lg:font-semibold lg:leading-hero-subtitle'>
                 We deliver tailored IT solutions to help you scale with speed
                 and confidence.
               </p>
@@ -36,7 +36,7 @@ export function HeroSection() {
             <Button
               href='#contact'
               size='lg'
-              className='w-full text-body-sm-bold lg:min-h-12 lg:w-[200px] lg:text-body-md-bold'
+              className='w-full text-body-sm-bold lg:min-h-12 lg:w-50 lg:text-body-md-bold'
             >
               Let's Talk
             </Button>
@@ -47,7 +47,7 @@ export function HeroSection() {
               key={heroImage}
               src={heroImage}
               alt='3D tech illustration supporting the hero message about IT solutions and smarter growth'
-              className='h-auto w-full max-h-[391px] max-w-[747px] object-contain sm:max-h-[440px]'
+              className='h-auto w-full max-h-hero-mobile max-w-hero-image object-contain sm:max-h-hero-mobile-sm'
             />
           </div>
         </div>

@@ -40,9 +40,9 @@ export function Navbar() {
       <div
         className={cn(
           'container-page flex flex-row justify-between items-center px-4 py-6',
-          'md:h-[72px] md:gap-6 md:px-6',
-          'lg:h-[84px] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-x-6 lg:px-8',
-          'xl:px-[140px] xl:gap-x-10',
+          'md:h-18 md:gap-6 md:px-6',
+          'lg:h-21 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-x-6 lg:px-8',
+          'xl:px-gutter xl:gap-x-10',
           '2xl:gap-x-12'
         )}
       >
@@ -79,7 +79,7 @@ export function Navbar() {
                 'shrink-0 whitespace-nowrap rounded-full font-semibold text-fg transition-colors hover:bg-hover',
                 'px-3 py-2 text-sm',
                 'lg:px-2.5 lg:py-2 lg:text-sm',
-                'xl:px-3.5 xl:text-[15px]',
+                'xl:px-3.5 xl:text-nav-link',
                 '2xl:px-4 2xl:text-base'
               )}
             >
@@ -102,7 +102,7 @@ export function Navbar() {
             <Button
               href='#contact'
               size='md'
-              className='min-w-0 shrink-0 lg:min-w-[120px] xl:min-w-[160px] 2xl:min-w-[197px]'
+              className='min-w-0 shrink-0 lg:min-w-30 xl:min-w-40 2xl:min-w-cta-wide'
             >
               Let's Talk
             </Button>
@@ -150,7 +150,7 @@ export function Navbar() {
       <div
         className={cn(
           'overflow-y-auto border-t transition-[background-color,border-color,backdrop-filter] duration-300',
-          'max-h-[calc(100dvh-64px)] md:max-h-[calc(100dvh-72px)]',
+          'max-h-[calc(100dvh-64px)] md:max-h-[calc(100dvh-4.5rem)]',
           'lg:hidden',
           scrolled || menuOpen
             ? cn('border-nav-border bg-mobile-menu nav-blur')
