@@ -26,7 +26,7 @@ export function Footer() {
                 className='h-8 w-8 object-contain'
                 aria-hidden='true'
               />
-              <span className='font-[family-name:var(--font-logo)] text-xl font-semibold text-logo sm:text-2xl'>
+              <span className='font-logo text-xl font-semibold text-logo sm:text-2xl'>
                 Your Logo
               </span>
             </div>
@@ -47,7 +47,7 @@ export function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className='rounded-full py-2 text-body-sm-medium text-fg transition-colors hover:bg-hover lg:text-base lg:font-medium lg:leading-8'
+                    className='rounded-full py-2 text-body-responsive text-fg transition-colors hover:bg-hover lg:font-medium lg:leading-8'
                   >
                     {link.label}
                   </a>

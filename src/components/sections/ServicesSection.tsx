@@ -5,7 +5,7 @@ import { SectionHeader } from '../ui/SectionHeader.tsx';
 export function ServicesSection() {
   return (
     <section id='services' className='section-padding'>
-      <div className='container-page flex flex-col items-center gap-10 lg:gap-16'>
+      <div className='container-page section-stack'>
         <SectionHeader
           title='Smart IT Solutions That Grow With You'
           subtitle='Tailored tech to boost efficiency, security, and results.'

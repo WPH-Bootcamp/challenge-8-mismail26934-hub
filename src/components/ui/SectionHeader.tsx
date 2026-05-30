@@ -26,7 +26,7 @@ export function SectionHeader({
       <h2 className='text-display-sm font-bold text-fg lg:text-display-xl'>
         {title}
       </h2>
-      <p className='text-body-sm-medium text-muted lg:text-lg lg:font-medium lg:leading-8'>
+      <p className='text-section-subtitle text-muted lg:text-right'>
         {subtitle}
       </p>
     </header>

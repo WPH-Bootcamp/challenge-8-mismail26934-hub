@@ -140,51 +140,49 @@ export function TestimonialsSection() {
         />
       </div>
 
-      <div className='testimonials-carousel-wrapper'>
-        <div className='testimonials-embla-viewport relative pt-2 pb-12 md:pb-14 lg:pb-12'>
-          <div ref={emblaRef} className='testimonials-embla overflow-hidden'>
-            <div className='testimonials-embla-container flex touch-pan-y'>
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={testimonial.name}
-                  className='testimonials-embla-slide min-w-0 shrink-0 grow-0 basis-auto pl-4 md:pl-5'
-                >
-                  <TestimonialCard
-                    {...testimonial}
-                    isActive={activeIndex === index}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className='marquee-fade-left pointer-events-none absolute inset-y-0 left-0 z-20 w-[10%] md:w-[12%] lg:w-[15%]' />
-          <div className='marquee-fade-right pointer-events-none absolute inset-y-0 right-0 z-20 w-[10%] md:w-[12%] lg:w-[15%]' />
-        </div>
-
-        <div
-          className='flex w-full justify-center px-4 md:px-6 lg:px-8'
-          dir='ltr'
-        >
-          <div
-            className='testimonials-dots'
-            role='tablist'
-            aria-label='Testimonial progress'
-          >
+      <div className='testimonials-embla-viewport relative pt-2 pb-12 md:pb-14 lg:pb-12'>
+        <div ref={emblaRef} className='testimonials-embla overflow-hidden'>
+          <div className='testimonials-embla-container flex touch-pan-y'>
             {testimonials.map((testimonial, index) => (
-              <button
+              <div
                 key={testimonial.name}
-                type='button'
-                onClick={() => scrollTo(index)}
-                className={cn(
-                  'testimonials-dot cursor-pointer border-0 p-0',
-                  activeIndex === index && 'testimonials-dot-active'
-                )}
-                role='tab'
-                aria-label={testimonial.name}
-                aria-selected={activeIndex === index}
-              />
+                className='testimonials-embla-slide min-w-0 shrink-0 grow-0 basis-auto pl-4 md:pl-5'
+              >
+                <TestimonialCard
+                  {...testimonial}
+                  isActive={activeIndex === index}
+                />
+              </div>
             ))}
           </div>
+        </div>
+        <div className='marquee-fade-edge-left' />
+        <div className='marquee-fade-edge-right' />
+      </div>
+
+      <div
+        className='flex w-full justify-center px-4 md:px-6 lg:px-8'
+        dir='ltr'
+      >
+        <div
+          className='testimonials-dots'
+          role='tablist'
+          aria-label='Testimonial progress'
+        >
+          {testimonials.map((testimonial, index) => (
+            <button
+              key={testimonial.name}
+              type='button'
+              onClick={() => scrollTo(index)}
+              className={cn(
+                'testimonials-dot cursor-pointer border-0 p-0',
+                activeIndex === index && 'testimonials-dot-active'
+              )}
+              role='tab'
+              aria-label={testimonial.name}
+              aria-selected={activeIndex === index}
+            />
+          ))}
         </div>
       </div>
     </section>

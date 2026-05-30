@@ -7,10 +7,6 @@ import { ThemeToggle } from '../ui/ThemeToggle';
 
 const SCROLL_THRESHOLD = 8;
 
-const navBlur =
-  'backdrop-blur-[20px] supports-backdrop-filter:backdrop-blur-[20px]';
-const navBlurOff = 'backdrop-blur-0 supports-backdrop-filter:backdrop-blur-0';
-
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -37,8 +33,8 @@ export function Navbar() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 w-full border-b transition-[background-color,border-color,backdrop-filter] duration-300',
         scrolled
-          ? cn('border-nav-border bg-nav', navBlur)
-          : cn('border-transparent bg-transparent', navBlurOff)
+          ? cn('border-nav-border bg-nav nav-blur')
+          : cn('border-transparent bg-transparent nav-blur-off')
       )}
     >
       <div
@@ -61,7 +57,7 @@ export function Navbar() {
             className='h-7 w-7 shrink-0 object-contain md:h-8 md:w-8'
             aria-hidden='true'
           />
-          <span className='font-[family-name:var(--font-logo)] text-lg font-semibold leading-7 text-logo md:text-xl md:leading-8 lg:text-2xl'>
+          <span className='font-logo text-lg font-semibold leading-7 text-logo md:text-xl md:leading-8 lg:text-2xl'>
             Your Logo
           </span>
         </a>
@@ -157,8 +153,8 @@ export function Navbar() {
           'max-h-[calc(100dvh-64px)] md:max-h-[calc(100dvh-72px)]',
           'lg:hidden',
           scrolled || menuOpen
-            ? cn('border-nav-border bg-mobile-menu', navBlur)
-            : cn('border-transparent bg-transparent', navBlurOff),
+            ? cn('border-nav-border bg-mobile-menu nav-blur')
+            : cn('border-transparent bg-transparent nav-blur-off'),
           menuOpen ? 'block' : 'hidden'
         )}
       >

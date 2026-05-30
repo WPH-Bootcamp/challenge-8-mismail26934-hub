@@ -39,10 +39,7 @@ export function ContactSection() {
         >
           <div className='flex flex-col gap-5'>
             <div className='flex flex-col gap-1.5'>
-              <label
-                htmlFor='name'
-                className='text-body-sm-bold text-fg lg:text-sm lg:font-bold'
-              >
+              <label htmlFor='name' className='text-form-label'>
                 Name
               </label>
               <Input
@@ -50,14 +47,11 @@ export function ContactSection() {
                 name='name'
                 placeholder='Enter your name'
                 required
-                className='text-body-sm-medium lg:text-base'
+                className='text-body-responsive'
               />
             </div>
             <div className='flex flex-col gap-1.5'>
-              <label
-                htmlFor='email'
-                className='text-body-sm-bold text-fg lg:text-sm lg:font-bold'
-              >
+              <label htmlFor='email' className='text-form-label'>
                 Email
               </label>
               <Input
@@ -66,14 +60,11 @@ export function ContactSection() {
                 type='email'
                 placeholder='Enter your email'
                 required
-                className='text-body-sm-medium lg:text-base'
+                className='text-body-responsive'
               />
             </div>
             <div className='flex flex-col gap-1.5'>
-              <label
-                htmlFor='message'
-                className='text-body-sm-bold text-fg lg:text-sm lg:font-bold'
-              >
+              <label htmlFor='message' className='text-form-label'>
                 Message
               </label>
               <Textarea
@@ -81,11 +72,11 @@ export function ContactSection() {
                 name='message'
                 placeholder='Enter your message'
                 required
-                className='min-h-[134px] text-body-sm-medium lg:min-h-[120px] lg:text-base'
+                className='min-h-[134px] text-body-responsive lg:min-h-[120px]'
               />
             </div>
             <fieldset className='flex flex-col gap-3.5'>
-              <legend className='text-body-sm-bold text-fg lg:text-sm lg:font-bold'>
+              <legend className='text-form-label'>
                 Services
               </legend>
               <div className='flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:gap-x-10'>
@@ -98,7 +89,7 @@ export function ContactSection() {
                       checked={selectedServices.includes(service)}
                       onChange={() => toggleService(service)}
                     />
-                    <span className='text-body-sm-medium text-fg lg:text-base lg:font-medium'>
+                    <span className='text-body-responsive text-fg lg:font-medium'>
                       {service}
                     </span>
                   </label>

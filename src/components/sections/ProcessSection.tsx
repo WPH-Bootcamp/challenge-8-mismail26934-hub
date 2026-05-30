@@ -22,17 +22,12 @@ function ProcessCard({
       onClick={() => setIsOpen((open) => !open)}
       aria-expanded={isOpen}
       className={cn(
-        'flex w-full items-start justify-between gap-4 rounded-2xl border border-border bg-surface text-left transition-colors hover:border-border-muted',
+        'flex w-full items-start justify-between rounded-2xl border border-border bg-surface text-left transition-colors hover:border-border-muted ',
         mobile ? 'p-4' : 'p-6'
       )}
     >
       <div className='flex min-w-0 flex-1 flex-col gap-1'>
-        <h3
-          className={cn(
-            'font-bold text-fg',
-            mobile ? 'text-body-md-bold' : 'text-xl'
-          )}
-        >
+        <h3 className={cn('text-fg', mobile ? 'text-body-md-bold' : 'text-xl')}>
           {title}
         </h3>
         <div
@@ -44,7 +39,7 @@ function ProcessCard({
           <div className='overflow-hidden'>
             <p
               className={cn(
-                'pt-1 text-muted',
+                'pt-1 text-muted ',
                 mobile
                   ? 'text-body-sm-medium'
                   : 'text-base font-medium leading-relaxed'

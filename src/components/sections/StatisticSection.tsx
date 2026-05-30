@@ -18,7 +18,7 @@ export function StatisticSection() {
               <div className='text-display-lg font-bold text-primary lg:text-display-2xl'>
                 {stat.value}
               </div>
-              <div className='px-2 text-center text-body-sm-semibold text-fg lg:max-w-[180px] lg:px-3 lg:text-xl lg:font-semibold lg:leading-snug'>
+              <div className='text-body-sm-semibold text-center text-fg lg:max-w-[180px] lg:px-3 lg:text-xl lg:font-semibold lg:leading-snug'>
                 {stat.label}
               </div>
             </div>

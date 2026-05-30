@@ -11,7 +11,7 @@ export function FaqSection() {
           <h2 className='max-w-[331px] text-display-sm font-bold text-fg lg:max-w-sm lg:text-display-xl'>
             Need Help? Start Here.
           </h2>
-          <p className='text-body-sm-medium text-muted lg:max-w-xs lg:text-lg lg:font-medium lg:text-right lg:leading-8'>
+          <p className='text-section-subtitle text-muted lg:max-w-xs lg:text-right'>
             Everything you need to know — all in one place.
           </p>
         </div>

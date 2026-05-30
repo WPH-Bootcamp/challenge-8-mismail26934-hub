@@ -9,7 +9,7 @@ export function HeroSection() {
 
   return (
     <section id='about' className='overflow-x-hidden bg-page lg:-mt-[84px]'>
-      <div className='mx-auto max-w-[1440px] pb-8 pt-8 md:px-10 md:pb-10 lg:px-0 lg:pb-0 lg:pt-0'>
+      <div className='container-page hero-container'>
         <div className='hero-section__inner lg:pb-0'>
           <img
             key={heroImage}

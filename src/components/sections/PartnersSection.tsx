@@ -25,7 +25,7 @@ const marqueePartners = [...partners, ...partners];
 export function PartnersSection() {
   return (
     <section className='overflow-x-hidden pb-12 pt-8'>
-      <div className='container-page flex flex-col items-center px-4 md:px-10 lg:px-[140px]'>
+      <div className='container-page section-padding-x flex flex-col items-center'>
         <h2 className='text-center text-display-xs font-bold text-fg'>
           Trusted by Global Innovators &amp; Leading Brands
         </h2>
@@ -42,8 +42,8 @@ export function PartnersSection() {
               />
             ))}
           </div>
-          <div className='marquee-fade-left pointer-events-none absolute inset-y-0 left-0 z-20 w-[10%] md:w-[12%] lg:w-[15%]' />
-          <div className='marquee-fade-right pointer-events-none absolute inset-y-0 right-0 z-20 w-[10%] md:w-[12%] lg:w-[15%]' />
+          <div className='marquee-fade-edge-left' />
+          <div className='marquee-fade-edge-right' />
         </div>
       </div>
     </section>
