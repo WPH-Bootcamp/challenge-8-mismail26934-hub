@@ -13,7 +13,7 @@ export function ServicesSection() {
         />
         <div className='grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
           {serviceRows.flat().map((service) => (
-            <div key={service.title} className='min-w-0'>
+            <div key={service.title} className='flex min-w-0 h-full'>
               <ServiceCard service={service} />
             </div>
           ))}

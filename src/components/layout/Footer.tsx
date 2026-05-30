@@ -47,7 +47,7 @@ export function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className='rounded-full py-2 text-body-responsive text-fg transition-colors hover:bg-hover lg:font-medium lg:leading-8'
+                    className='shrink-0 whitespace-nowrap rounded-full py-1 px-4 text-body-responsive text-fg transition-colors text-sm hover:bg-hover lg:font-medium lg:leading-8'
                   >
                     {link.label}
                   </a>
