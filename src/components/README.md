@@ -2,34 +2,35 @@
 
 Folder ini berisi semua React components yang akan kamu buat.
 
-##  Sub-folders
+## Sub-folders
 
 ### `layout/`
+
 Components yang digunakan untuk layout utama website:
+
 - **Navbar.tsx** - Navigation bar di bagian atas
 - **Footer.tsx** - Footer di bagian bawah
 - **Layout.tsx** (optional) - Wrapper component untuk layout
 
 **Contoh Structure:**
+
 ```tsx
 // layout/Navbar.tsx
 interface NavbarProps {
   // Define your props here
 }
 
-const Navbar = ({ /* props */ }: NavbarProps) => {
-  return (
-    <nav>
-      {/* Your navbar implementation */}
-    </nav>
-  );
+const Navbar = ({} /* props */ : NavbarProps) => {
+  return <nav>{/* Your navbar implementation */}</nav>;
 };
 
 export default Navbar;
 ```
 
 ### `sections/`
+
 Components untuk setiap section di homepage:
+
 - **HeroSection.tsx** - Hero/landing section
 - **AboutSection.tsx** - About company section
 - **ServicesSection.tsx** - Services/products section
@@ -38,18 +39,22 @@ Components untuk setiap section di homepage:
 - Dan lain-lain sesuai design Figma
 
 **Tips:**
+
 - Setiap section adalah komponen independen
 - Bisa menerima data via props
 - Reusable dan modular
 
 ### `ui/`
+
 Reusable UI components yang digunakan di berbagai tempat:
+
 - **Button.tsx** - Reusable button component
 - **Card.tsx** - Card component untuk display content
 - **Input.tsx** (optional) - Form input component
 - **Icon.tsx** (optional) - Icon wrapper component
 
 **Contoh Button Component:**
+
 ```tsx
 // ui/Button.tsx
 interface ButtonProps {
@@ -59,7 +64,12 @@ interface ButtonProps {
   className?: string;
 }
 
-const Button = ({ variant = 'primary', children, onClick, className }: ButtonProps) => {
+const Button = ({
+  variant = 'primary',
+  children,
+  onClick,
+  className,
+}: ButtonProps) => {
   // Implement different styles based on variant
   return (
     <button
@@ -74,7 +84,7 @@ const Button = ({ variant = 'primary', children, onClick, className }: ButtonPro
 export default Button;
 ```
 
-##  Best Practices
+## Best Practices
 
 1. **One Component Per File** - Satu file hanya berisi satu component
 2. **PascalCase Naming** - Nama file dan component menggunakan PascalCase
@@ -82,7 +92,7 @@ export default Button;
 4. **Export Default** - Use default export untuk components
 5. **Modular & Reusable** - Buat components yang bisa digunakan ulang
 
-##  Component Template
+## Component Template
 
 Gunakan template ini sebagai starting point:
 
@@ -107,10 +117,14 @@ const [ComponentName] = ({ /* destructure props */ }: [ComponentName]Props) => {
 export default [ComponentName];
 ```
 
-##  Getting Started
+## Getting Started
 
 1. Mulai dengan membuat components di folder `ui/` (Button, Card)
 2. Kemudian buat components di folder `layout/` (Navbar, Footer)
 3. Terakhir buat components di folder `sections/` (Hero, About, dll)
 
 Lihat design Figma untuk memahami components apa saja yang perlu dibuat!
+
+Nama: [Muhammad Ismail]
+Repository: [https://github.com/mismail26934-hub/challenge-8-mismail26934-hub.git]
+Deployment: [https://challenge-8-mismail26934-hub.vercel.app/]

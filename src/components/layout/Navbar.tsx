@@ -48,7 +48,7 @@ export function Navbar() {
       >
         {/* Logo */}
         <a
-          href='#about'
+          href='/'
           className='flex min-w-0 items-center gap-2 justify-self-start md:gap-2.5'
         >
           <img

@@ -76,9 +76,7 @@ export function ContactSection() {
               />
             </div>
             <fieldset className='flex flex-col gap-3.5'>
-              <legend className='text-form-label'>
-                Services
-              </legend>
+              <legend className='text-form-label'>Services</legend>
               <div className='flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:gap-x-10'>
                 {serviceOptions.map((service) => (
                   <label
