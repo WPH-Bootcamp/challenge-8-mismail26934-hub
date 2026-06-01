@@ -124,7 +124,3 @@ export default [ComponentName];
 3. Terakhir buat components di folder `sections/` (Hero, About, dll)
 
 Lihat design Figma untuk memahami components apa saja yang perlu dibuat!
-
-Nama: [Muhammad Ismail]
-Repository: [https://github.com/mismail26934-hub/challenge-8-mismail26934-hub.git]
-Deployment: [https://challenge-8-mismail26934-hub.vercel.app/]
