@@ -214,7 +214,11 @@ html.light {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 24px;
+
+  @variant lg {
+    gap: 40px;
+  }
 }
 
 /* Display typography — mobile base, lg desktop (Figma) */
