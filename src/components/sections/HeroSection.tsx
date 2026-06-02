@@ -20,7 +20,7 @@ export function HeroSection() {
           />
           <div className='relative flex w-full flex-col items-start px-4 gap-10 lg:justify-start lg:pt-hero-content lg:pl-gutter'>
             <header className='flex w-full min-w-0 max-w-hero-copy flex-col items-start gap-2'>
-              <h1 className="hero-title w-full font-['Quicksand',Helvetica] lg:max-w-hero-copy">
+              <h1 className="hero-title w-full font-['Quicksand',Helvetica]">
                 <p className='hero-title__line--lead text-fg'>
                   Your Tech Partner for
                 </p>

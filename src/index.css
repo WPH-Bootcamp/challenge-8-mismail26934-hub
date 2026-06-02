@@ -480,6 +480,9 @@ html.light {
   mix-blend-mode: normal;
   opacity: var(--theme-partner-opacity);
   filter: var(--theme-partner-filter);
+  transition:
+    opacity 0.25s ease,
+    filter 0.25s ease;
 }
 
 /* Service card */
@@ -501,7 +504,13 @@ html.light {
   border-radius: 1rem;
   padding: 1px;
   opacity: 0;
-  background: linear-gradient(286deg, var(--theme-border) 0%, #ff6c37 100%);
+  background: linear-gradient(
+    135deg,
+    #ff6c37 0%,
+    #ff623e 18%,
+    var(--theme-border) 55%,
+    var(--theme-border) 100%
+  );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -520,9 +529,16 @@ html.light {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .partners-marquee-viewport:hover .partners-logo:hover {
+    opacity: 0.8;
+    filter: none;
+  }
+
   .service-card:hover {
     border-color: transparent;
-    box-shadow: 0 0 32px rgba(255, 98, 62, 0.12);
+    box-shadow:
+      0 0 32px rgb(255 98 62 / 0.12),
+      0 0 0 1px rgb(255 108 55 / 0.08);
   }
 
   .service-card:hover .service-card-border {

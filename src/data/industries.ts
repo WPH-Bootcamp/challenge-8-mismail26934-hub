@@ -1,4 +1,7 @@
 import industryImage from '../assets/images/sections/industry.png';
+import ecommerceImage from '../assets/images/sections/e-commerce.png';
+import healthcareImage from '../assets/images/sections/healthcare.png';
+
 import type { IndustryItem } from '../types';
 
 export const industries: IndustryItem[] = [
@@ -13,14 +16,14 @@ export const industries: IndustryItem[] = [
     id: 'ecommerce',
     label: 'E-Commerce',
     description:
-      'Launch storefronts and marketplaces optimized for conversion, inventory management, and seamless checkout experiences.',
-    image: industryImage,
+      'Boost your online sales with fast, reliable platforms designed for seamless shopping experiences, inventory management, and payment integration.',
+    image: ecommerceImage,
   },
   {
     id: 'healthcare',
     label: 'Healthcare',
     description:
-      'Deliver HIPAA-aware platforms that improve patient engagement, clinical workflows, and operational efficiency.',
-    image: industryImage,
+      'Empowering healthcare providers with digital solutions that improve patient care, ensure data privacy, and streamline operational workflows.',
+    image: healthcareImage,
   },
 ];
