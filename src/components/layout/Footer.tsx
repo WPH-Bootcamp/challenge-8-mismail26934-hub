@@ -7,10 +7,14 @@ import { footerLinks } from '../../data/navigation';
 import { Separator } from '../ui/Separator';
 
 const socialLinks = [
-  { href: '#', icon: linkedinIcon, label: 'LinkedIn' },
-  { href: '#', icon: instagramIcon, label: 'Instagram' },
-  { href: '#', icon: facebookIcon, label: 'Facebook' },
-  { href: '#', icon: tiktokIcon, label: 'TikTok' },
+  { href: 'https://id.linkedin.com/', icon: linkedinIcon, label: 'LinkedIn' },
+  {
+    href: 'https://www.instagram.com/',
+    icon: instagramIcon,
+    label: 'Instagram',
+  },
+  { href: 'https://www.facebook.com/', icon: facebookIcon, label: 'Facebook' },
+  { href: 'https://www.tiktok.com/', icon: tiktokIcon, label: 'TikTok' },
 ];
 
 export function Footer() {
@@ -58,6 +62,8 @@ export function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target='_blank'
+                    rel='noopener noreferrer'
                     aria-label={social.label}
                     className='social-link flex h-10 w-10 items-center justify-center rounded-full transition-opacity hover:opacity-80'
                   >
