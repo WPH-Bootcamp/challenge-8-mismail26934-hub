@@ -9,21 +9,20 @@ export const faqs: FaqItem[] = [
   {
     question: 'How do I know if this is right for my business?',
     answer:
-      "Book a free consultation - we'll assess your goals, timeline, and budget to recommend the best approach.",
+      'Book a free consult — we’ll assess your goals and recommend the right approach.',
   },
   {
     question: 'How much does a project cost?',
     answer:
-      'Pricing depends on scope and complexity. We provide transparent estimates after discovery.',
+      'Every project is different. Let’s talk about your needs to get a tailored estimate.',
   },
   {
     question: 'How long does it take?',
     answer:
-      "Typical projects range from 4-12 weeks. We'll share a detailed timeline during planning.",
+      'Depends on scope — but we always prioritize quality and deadlines.',
   },
   {
     question: 'Can I start with a small project first?',
-    answer:
-      'Absolutely. Many clients begin with an MVP or pilot before scaling to a full engagement.',
+    answer: 'Absolutely. We often begin with MVPs or pilot projects.',
   },
 ];
